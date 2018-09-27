@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8263afae-153a-4a94-8a56-943e356319ec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ConvNetworks/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvNetworks/ConvNetwork.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvNetworks/Convolution.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvNetworks/Pool.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvNetworks/PoolForward.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ConvNetworks/PoolForward.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvNetworks/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConvNetworks/.ipynb_checkpoints/Conv1-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ConvNetworks/.ipynb_checkpoints/Conv1-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConvNetworks/ConvolutionForward.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConvNetworks/ConvolutionForward.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,31 +14,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Conv1.ipynb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ConvNetworks/Conv1.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConvolutionForward.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConvNetworks/ConvolutionForward.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ConvNetworks/Conv1.ipynb" />
+        <option value="$PROJECT_DIR$/ConvNetworks/ConvolutionForward.py" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -84,7 +68,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ConvNetworks" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
@@ -116,7 +100,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -148,21 +131,22 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ConvNetworks/ConvolutionForward.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConvNetworks/Conv1.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConvNetworks/ConvolutionForward.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConvNetworks/Pad.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

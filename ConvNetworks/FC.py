@@ -44,4 +44,4 @@ def backPropagation(caches2, primeActivationFunction=SigmoidPrime):
         nablaW = delta.dot(aS[-l - 1].T)
         # print("delta2{}: \n{}".format(delta.shape, delta))
 
-    return nablaB, nablaW
+    return nablaB, nablaW, delta

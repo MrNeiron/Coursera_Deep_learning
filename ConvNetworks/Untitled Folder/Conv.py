@@ -3,7 +3,7 @@ from Pad import PadZero
 
 # GRADED FUNCTION: conv_forward
 
-def FeedForwardConv(prevA,W,b,hyperparameters):
+def ConvForward(prevA,W,b,hyperparameters):
     """
     Implements the forward propagation for a convolution function
     
@@ -58,7 +58,7 @@ def FeedForwardConv(prevA,W,b,hyperparameters):
     
     return Z, cache
 
-def BackPropagationConv(cache, dZ):
+def ConvBackward(cache, dZ):
     """
     Implement the backward propagation for a convolution function
     
@@ -81,6 +81,7 @@ def BackPropagationConv(cache, dZ):
     
     # Retrieve dimensions from Aprev's shape
     (m,nHprev,nWprev,nCprev) = Aprev.shape
+
     
     # Retrieve dimensions from W's shape
     (f,f,nCprev,nC) = W.shape
@@ -93,34 +94,29 @@ def BackPropagationConv(cache, dZ):
     (m, nH, nW, nC) = dZ.shape
     
     # Initialize dAprev, dW, db with the correct shapes
-    dAprev = np.zeros(Aprev.shape)
-    dW = np.zeros(W.shape)
+    dAprev = np.zeros((m,nHprev,nWprev,nCprev))
+    dW = np.zeros((f,f,nCprev,nC))
     dB = np.zeros((1,1,1,nC))
     
     # Pad Aprev and dAprev
     AprevPad = PadZero(Aprev, pad)
+
     dAprevPad = PadZero(dAprev, pad)
     
     for m1 in range(m):                                                 # loop over the training examples
-        for i,h1 in enumerate(range(0,nH-f+1,stride)):                  # loop over vertical axis of the output volume
-            for j,w1 in enumerate(range(0,nW-f+1,stride)):              # loop over horizontal axis of the output volume
+        for i,h1 in enumerate(range(0,nH,stride)):                  # loop over vertical axis of the output volume
+            for j,w1 in enumerate(range(0,nW,stride)):              # loop over horizontal axis of the output volume
                 for c1 in range(nC):                                    # loop over the channels of the output volume
+
+                    dAprevPad[m1,h1:h1+f,w1:w1+f,:] += W[:,:,:,c1] * dZ[m1, i, j, c1]
                     
-                    print("\n\nm1: {}\ni:{} h1:{}\nj:{} w1:{}\nc1:{}".format(m1,i,h1,j,w1,c1))
-                    print("W1: \n",dW[...,c1])
-                    print("a: \n", dAprevPad[m1,h1:h1+f,w1:w1+f,c1])
-                    print("delta: \n",dZ[m1,i,j,c1])
-                    
-                    #dAprevPad[m1,h1:h1+f,w1:w1+f,:] += W[...,c1] * dZ[m1, h1:h1+f, w1:w1+f, c1]
-                    dAprevPad[m1,h1:h1+f,w1:w1+f,:] += W[...,c1] * dZ[m1, i, j, c1]
-                    #da_prev_pad[vert_start:vert_end, horiz_start:horiz_end, :] += W[:,:,:,c] * dZ[i, h, w, c]
                     dW[...,c1] += AprevPad[m1,h1:h1+f,w1:w1+f,:] * dZ[m1,i,j,c1]
                     dB[...,c1] += dZ[m1,i,j,c1]
-                    print("W: \n",dW[...,c1])
     
     dAprev = dAprevPad[:,pad:-pad,pad:-pad,:]
-    print("dAprev{}: \n{}".format(dAprev.shape, dAprev))
+
+    
     # Making sure your output shape is correct
-    assert (dAprev.shape == (m, nHprev,nWprev,nCprev))       
+    assert (dAprev.shape == (m,nHprev,nWprev,nCprev))       
                     
     return dAprev, dW, dB
